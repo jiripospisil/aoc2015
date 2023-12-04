@@ -27,4 +27,24 @@ path = "src/day3/0.rs"
 name = "day3_1"
 path = "src/day3/1.rs"
 
+[[bin]]
+name = "day4_0"
+path = "src/day4/0.rs"
+
+[[bin]]
+name = "day4_1"
+path = "src/day4/1.rs"
+
+[[bin]]
+name = "day5_0"
+path = "src/day5/0.rs"
+
+[[bin]]
+name = "day5_1"
+path = "src/day5/1.rs"
+
 [dependencies]
+base16ct = { version = "0.2.0", features = ["alloc"] }
+itertools = "0.12.0"
+md-5 = "0.10.6"
+rayon = "1.8.0"
