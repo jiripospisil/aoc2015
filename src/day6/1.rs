@@ -16,15 +16,14 @@ fn main() {
         let xx = caps.get(3).unwrap().as_str().parse::<usize>().unwrap();
         let yy = caps.get(4).unwrap().as_str().parse::<usize>().unwrap();
 
-        #[allow(clippy::needless_range_loop)]
-        for i in x..=xx {
-            for j in y..=yy {
-                grid[i][j] = if line.starts_with("turn on") {
-                    grid[i][j] + 1
+        for row in &mut grid[x..=xx] {
+            for cell in &mut row[y..=yy] {
+                *cell = if line.starts_with("turn on") {
+                    *cell + 1
                 } else if line.starts_with("turn off") {
-                    grid[i][j].saturating_sub(1)
+                    cell.saturating_sub(1)
                 } else {
-                    grid[i][j] + 2
+                    *cell + 2
                 };
             }
         }
