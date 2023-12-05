@@ -59,6 +59,14 @@ path = "src/day7/0.rs"
 name = "day7_1"
 path = "src/day7/1.rs"
 
+[[bin]]
+name = "day8_0"
+path = "src/day8/0.rs"
+
+[[bin]]
+name = "day8_1"
+path = "src/day8/1.rs"
+
 [dependencies]
 base16ct = { version = "0.2.0", features = ["alloc"] }
 itertools = "0.12.0"
