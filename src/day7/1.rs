@@ -57,14 +57,14 @@ fn main() {
             } else {
                 WireOrLiteral::Connection(name_or_literal.to_owned())
             };
-            connections.push(if s!(caps, 2).starts_with("A") {
+            connections.push(if s!(caps, 2).starts_with('A') {
                 Connection::And(wrapped, so!(caps, 3), so!(caps, 4))
             } else {
                 Connection::Or(so!(caps, 1), so!(caps, 3), so!(caps, 4))
             });
         } else if let Some(caps) = shifts.captures(&line) {
             connections.push(Connection::Shift(
-                s!(caps, 2).starts_with("L"),
+                s!(caps, 2).starts_with('L'),
                 so!(caps, 1),
                 n!(caps, 3),
                 so!(caps, 4),
